@@ -1,0 +1,10 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>dataFile/gold.csv</file>
+        <file>icons/arrowdown.ico</file>
+        <file>icons/neutral_price.ico</file>
+        <file>icons/uparrow.ico</file>
+        <file>PriceTableView.qml</file>
+    </qresource>
+</RCC>
