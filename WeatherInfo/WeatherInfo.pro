@@ -32,9 +32,30 @@ RESOURCES += \
 
 
 ################ Add for SSL 1.1.1 #######################
+win32:CONFIG(release, debug|release): LIBS += -L$$PWD/openssl/ -lcrypto
+else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/openssl/ -lcryptod
+else:unix: LIBS += -L$$PWD/openssl/ -lcrypto
 
-INCLUDEPATH += openssl
-LIBS += openssl/libcrypto.a -ldl -lpthread
-LIBS += openssl/libssl.a
+INCLUDEPATH += $$PWD/openssl
+DEPENDPATH += $$PWD/openssl
+
+win32-g++:CONFIG(release, debug|release): PRE_TARGETDEPS += $$PWD/openssl/libcrypto.a
+else:win32-g++:CONFIG(debug, debug|release): PRE_TARGETDEPS += $$PWD/openssl/libcryptod.a
+else:win32:!win32-g++:CONFIG(release, debug|release): PRE_TARGETDEPS += $$PWD/openssl/crypto.lib
+else:win32:!win32-g++:CONFIG(debug, debug|release): PRE_TARGETDEPS += $$PWD/openssl/cryptod.lib
+else:unix: PRE_TARGETDEPS += $$PWD/openssl/libcrypto.a
+
+win32:CONFIG(release, debug|release): LIBS += -L$$PWD/openssl/ -lssl
+else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/openssl/ -lssld
+else:unix: LIBS += -L$$PWD/openssl/ -lssl
+
+INCLUDEPATH += $$PWD/openssl
+DEPENDPATH += $$PWD/openssl
+
+win32-g++:CONFIG(release, debug|release): PRE_TARGETDEPS += $$PWD/openssl/libssl.a
+else:win32-g++:CONFIG(debug, debug|release): PRE_TARGETDEPS += $$PWD/openssl/libssld.a
+else:win32:!win32-g++:CONFIG(release, debug|release): PRE_TARGETDEPS += $$PWD/openssl/ssl.lib
+else:win32:!win32-g++:CONFIG(debug, debug|release): PRE_TARGETDEPS += $$PWD/openssl/ssld.lib
+else:unix: PRE_TARGETDEPS += $$PWD/openssl/libssl.a
 
 ######################################################
