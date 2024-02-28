@@ -1,0 +1,13 @@
+[Desktop Entry]
+Type=Application
+X-Nemo-Application-Type=silica-qt5
+Icon=ru.home.work.dz6
+Exec=/usr/bin/ru.home.work.dz6
+Name=Template
+Name[ru]=Шаблон
+
+[X-Application]
+Permissions=
+OrganizationName=ru.home.work
+ApplicationName=dz6
+ExecDBus=/usr/bin/ru.home.work.dz6
