@@ -1,0 +1,13 @@
+[Desktop Entry]
+Type=Application
+X-Nemo-Application-Type=silica-qt5
+Icon=ru.auroraos.PositioningAndLocation
+Exec=/usr/bin/ru.auroraos.PositioningAndLocation
+Name=PositioningAndLocation
+Name[ru]=Геопозиция и карты
+
+[X-Application]
+Permissions=Internet;Location
+OrganizationName=ru.auroraos
+ApplicationName=PositioningAndLocation
+ExecDBus=/usr/bin/ru.auroraos.PositioningAndLocation
