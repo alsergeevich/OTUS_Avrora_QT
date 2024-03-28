@@ -1,0 +1,13 @@
+[Desktop Entry]
+Type=Application
+X-Nemo-Application-Type=silica-qt5
+Icon=ru.auroraos.homeWork
+Exec=/usr/bin/ru.auroraos.homeWork
+Name=Template
+Name[ru]=Шаблон
+
+[X-Application]
+Permissions=
+OrganizationName=ru.auroraos
+ApplicationName=homeWork
+ExecDBus=/usr/bin/ru.auroraos.homeWork
