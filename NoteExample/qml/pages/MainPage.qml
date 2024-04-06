@@ -7,6 +7,7 @@ Page {
     objectName: "mainPage"
     allowedOrientations: Orientation.All
 
+
     SilicaListView {
         id: listView
         anchors.fill: parent
@@ -14,7 +15,7 @@ Page {
         delegate: ListItem {
             menu: ContextMenu {
                 MenuItem {
-                    text: qsTr("Изменить")
+                    text: qsTr("Change")
                     onClicked: {
                         var dialog = pageStack.push(Qt.resolvedUrl("UpdatePage.qml")) //переход на страницу редактирования записи
                         dialog.note_u = note //передаём в свойство страницы редактирования значения из записи
@@ -35,7 +36,7 @@ Page {
                     }
                 }
                 MenuItem {
-                    text: qsTr("Удалить")
+                    text: qsTr("Delete")
                     onClicked: {
                         //получаем rowid из модели
                         var rowid = parseInt(note_id)
@@ -56,13 +57,13 @@ Page {
         }
         header: PageHeader {
             objectName: "pageHeader"
-            title: qsTr("Список заметок")
+            title: qsTr("List notes")
         }
 
         PullDownMenu {
             quickSelect: true
             MenuItem {
-                text: "Добавить заметку"
+                text: qsTr("Add a note")
                 onClicked: {
                     var dialog = pageStack.push(Qt.resolvedUrl("CreateNoteDialog.qml")) //переход на страницу создания записи
                     dialog.onAccepted.connect(function () {

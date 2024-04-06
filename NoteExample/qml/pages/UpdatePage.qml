@@ -12,8 +12,8 @@ Dialog {
     Column {
         anchors.fill: parent
         DialogHeader {
-            acceptText: "Сохранить"
-            cancelText: "Отменить"
+            acceptText: qsTr("Save")
+            cancelText: qsTr("Cancel")
         }
         TextArea {
             id: noteArea

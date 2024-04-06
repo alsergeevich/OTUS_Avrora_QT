@@ -6,7 +6,7 @@ CoverBackground {
 
     CoverPlaceholder {
         objectName: "placeholder"
-        text: qsTr("Template")
+        text: qsTr("Notes")
         icon {
             source: Qt.resolvedUrl("../icons/NoteExample.svg")
             sourceSize { width: icon.width; height: icon.height }

@@ -12,12 +12,12 @@ Dialog {
     Column {
         anchors.fill: parent
         DialogHeader {
-            acceptText: "Сохранить"
-            cancelText: "Отменить"
+            acceptText: qsTr("Save")
+            cancelText: qsTr("Cancel")
         }
         TextArea { //поле для написания заметки
             id: noteArea
-            placeholderText: "Введите заметку"
+            placeholderText: qsTr("Enter note")
         }
     }
 
@@ -28,7 +28,7 @@ Dialog {
             note = noteArea.text //присваиваем свойству note текст из текстового поля
             note_id = id //присваиваем полю note_id номер записи в БД
         } else {
-            statustext.text = "Failed to insert row"
+            statustext.text = qsTr("Failed to insert row")
         }
 
 
